@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-// import { Provider } from 'react-redux';
-// import { createStore, applyMiddleware } from 'redux';
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware } from 'redux';
 import firebase from 'firebase';
-// import ReduxThunk from 'redux-thunk';
-// import reducers from './reducers';
+import ReduxThunk from 'redux-thunk';
+import reducers from './reducers';
 import Router from './Router';
 // import LoginForm from './components/LoginForm';
 
@@ -22,16 +22,16 @@ class App extends Component {
     }
 
     render() {
-        // const store = createStore(reducers, {}, applyMiddleware(ReduxThunk));
+        const store = createStore(reducers, {}, applyMiddleware(ReduxThunk));
         // 1st argument is for reducers
         // 2nd argument is for any initial state that we might want to pass.
         // Maybe we want to prepopulate with some data.
         // 3rd argument is called 'store enhancers'
         // It basically adds an additional functionality to the store.
         return (
-            // <Provider store={store}>
+            <Provider store={store}>
                 <Router />
-            // </Provider>
+            </Provider>
         );
     }
 }
