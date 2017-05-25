@@ -27,7 +27,8 @@ class LoginForm extends Component {
             return <View style={{ borderColor: '#F04E45', alignItems: 'center', flex: 1, justifyContent: 'center' }}><Spinner size={32} /></View>;
         }
         return (
-            <Button onPress={this.onButtonPress.bind(this)} style={{ backgroundColor: '#FFFFFF', borderColor: '#F04E45', borderRadius: 35, borderWidth: 2 }}>
+            <Button onPress={this.onButtonPress.bind(this)}
+            style={{ backgroundColor: '#FFFFFF', borderColor: '#F04E45', borderRadius: 35, borderWidth: 2 }}>
                 Login
             </Button>
         );
@@ -35,7 +36,7 @@ class LoginForm extends Component {
 
     render() {
         return (
-            <Card>
+            <Card style={{ borderColor: 'transparent', borderBottomWidth: 0, shadowOpacity: 0, marginTop: 15 }}>
                 <CardSection style={{ borderBottomWidth: 0, borderColor: '#fff', paddingTop: 10 }}>
                 <Image
                 style={styles.imageStyle}
@@ -56,7 +57,7 @@ class LoginForm extends Component {
                     </ScrollView>
                 </CardSection>
 
-                <CardSection style={{ borderBottomWidth: 0, borderColor: '#fff', paddingTop: 10, shadowOpacity: 0 }}>
+                <CardSection style={{ borderBottomWidth: 0, borderColor: '#fff', paddingTop: 10, paddingBottom: 5, shadowOpacity: 0 }}>
                         <ScrollView style={{ marginLeft: 15, marginRight: 15 }}>
                             <TextField
                               height={40}
@@ -73,7 +74,7 @@ class LoginForm extends Component {
                 <Text style={styles.errorTextStyle}>
                     {this.props.error}
                 </Text>
-                <CardSection style={{ alignItems: 'center', justifyContent: 'center', shadowOpacity: 0 }}>
+                <CardSection style={{ alignItems: 'center', justifyContent: 'center', shadowOpacity: 0, paddingBottom: 10 }}>
                     {this.renderButton()}
                 </CardSection>
             </Card>
