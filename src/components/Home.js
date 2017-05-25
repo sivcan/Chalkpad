@@ -15,7 +15,9 @@ class Home extends Component {
 const styles = {
     textStyle: {
         color: '#FFFFFF',
-        fontSize: 20
+        fontSize: 20,
+        textAlign: 'center',
+        fontFamily: 'Helvetica-Light'
     }
 };
 

@@ -16,12 +16,14 @@ const RouterComponent = () => {
                 component={InitialScreen}
                 hideNavBar
                 title='Chalkpad'
+                animation='fade'
                 initial
                 />
             </Scene>
             <Scene key='login'>
                 <Scene
                 key='loginUser'
+                animation='fade'
                 component={LoginForm}
                 title='Chalkpad Login'
                 hideNavBar={false}

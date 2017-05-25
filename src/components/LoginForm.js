@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, ScrollView, View } from 'react-native';
+import { Text, ScrollView, View, Image } from 'react-native';
 import { connect } from 'react-redux';
 import { Spinner } from 'nachos-ui';
 import TextField from 'react-native-md-textinput';
@@ -24,7 +24,7 @@ class LoginForm extends Component {
     }
     renderButton() {
         if (this.props.loading) {
-            return <View style={{ borderColor: '#F04E45', alignItems: 'center', flex: 1, justifyContent: 'center' }}><Spinner /></View>;
+            return <View style={{ borderColor: '#F04E45', alignItems: 'center', flex: 1, justifyContent: 'center' }}><Spinner size={32} /></View>;
         }
         return (
             <Button onPress={this.onButtonPress.bind(this)} style={{ backgroundColor: '#FFFFFF', borderColor: '#F04E45', borderRadius: 35, borderWidth: 2 }}>
@@ -36,7 +36,13 @@ class LoginForm extends Component {
     render() {
         return (
             <Card>
-                <CardSection>
+                <CardSection style={{ borderBottomWidth: 0, borderColor: '#fff', paddingTop: 10 }}>
+                <Image
+                style={styles.imageStyle}
+                source={require('../../images/logo.png')}
+                />
+                </CardSection>
+                <CardSection style={{ borderBottomWidth: 0, borderColor: '#fff', paddingBottom: 10 }}>
                     <ScrollView style={{ marginLeft: 15, marginRight: 15 }}>
                         <TextField
                           height={40}
@@ -50,7 +56,7 @@ class LoginForm extends Component {
                     </ScrollView>
                 </CardSection>
 
-                <CardSection>
+                <CardSection style={{ borderBottomWidth: 0, borderColor: '#fff', paddingTop: 10, shadowOpacity: 0 }}>
                         <ScrollView style={{ marginLeft: 15, marginRight: 15 }}>
                             <TextField
                               height={40}
@@ -67,7 +73,7 @@ class LoginForm extends Component {
                 <Text style={styles.errorTextStyle}>
                     {this.props.error}
                 </Text>
-                <CardSection style={{ alignItems: 'center', justifyContent: 'center' }}>
+                <CardSection style={{ alignItems: 'center', justifyContent: 'center', shadowOpacity: 0 }}>
                     {this.renderButton()}
                 </CardSection>
             </Card>
@@ -80,6 +86,15 @@ const styles = {
         fontSize: 14,
         alignSelf: 'center',
         color: 'red'
+    },
+    imageStyle: {
+        flex: 1,
+        height: 80,
+        width: 50,
+        resizeMode: 'contain',
+        justifyContent: 'center',
+        alignItems: 'center',
+        width: null
     }
 };
 
