@@ -40,7 +40,7 @@ class LoginForm extends Component {
                     <ScrollView style={{ marginLeft: 15, marginRight: 15 }}>
                         <TextField
                           height={40}
-                          label={'Username'}
+                          label={'Email'}
                           highlightColor={'#F04E45'}
                           onChangeText={this.onEmailChange.bind(this)}
                           value={this.props.email}

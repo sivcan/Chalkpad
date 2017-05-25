@@ -2,6 +2,7 @@ import React from 'react';
 import { Scene, Router, Actions } from 'react-native-router-flux';
 import InitialScreen from './components/InitialScreen';
 import LoginForm from './components/LoginForm';
+import Home from './components/Home';
 
 const RouterComponent = () => {
     return (
@@ -18,7 +19,7 @@ const RouterComponent = () => {
                 initial
                 />
             </Scene>
-            <Scene key='main'>
+            <Scene key='login'>
                 <Scene
                 key='loginUser'
                 component={LoginForm}
@@ -26,6 +27,16 @@ const RouterComponent = () => {
                 hideNavBar={false}
                 initial
                 sceneStyle={{ paddingTop: 65 }}
+                />
+            </Scene>
+            <Scene key='main'>
+                <Scene
+                key='home'
+                component={Home}
+                title='Home'
+                hideNavBar={false}
+                sceneStyle={{ paddingTop: 65 }}
+                initial
                 />
             </Scene>
         </Router>
