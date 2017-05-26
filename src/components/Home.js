@@ -7,7 +7,7 @@ class Home extends Component {
         const { textStyle } = styles;
         return(
             <View style={{ flex:1, backgroundColor: '#F04E45' }}>
-                <Text style={textStyle}> Welcome to home </Text>
+                <Text style={textStyle}> Section under development </Text>
             </View>
         );
     }
