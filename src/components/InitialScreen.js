@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, StatusBar, View, Text } from 'react-native';
+import { Image, StatusBar, View, Text, TouchableWithoutFeedback } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import { CardSection, Button } from './common';
 
@@ -7,17 +7,13 @@ const InitialScreen = () => {
     const { backgroundImage } = styles;
     return (
         <View style={{ flex:1 }}>
-            <StatusBar backgroundColor='blue' barStyle='light-content' />
+            <StatusBar backgroundColor='#F04E45' barStyle='light-content' />
+            <TouchableWithoutFeedback onPress={() => Actions.login()}>
                 <Image
                 source={require('../../images/InitialScreen.png')}
                 style={backgroundImage}
-                >
-                <CardSection style={{ marginTop: 408, backgroundColor: 'transparent', borderBottomWidth: 0 }}>
-                    <Button onPress={() => Actions.login()} style={{  backgroundColor: 'transparent', borderColor: 'transparent', borderRadius: 50, }}>
-
-                    </Button>
-                </CardSection>
-                </Image>
+                />
+            </TouchableWithoutFeedback>
         </View>
     );
 };
