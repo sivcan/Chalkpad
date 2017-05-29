@@ -91,7 +91,6 @@ const styles = {
     imageStyle: {
         flex: 1,
         height: 80,
-        width: 50,
         resizeMode: 'contain',
         justifyContent: 'center',
         alignItems: 'center',

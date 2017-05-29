@@ -1,25 +1,25 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
-import { Tabs, Tab, Icon } from 'react-native-elements';
+import { View } from 'react-native';
+// import { Tabs, Tab, Icon } from 'react-native-elements';
+import LibraryList from './LibraryList';
 
 class Home extends Component {
     render() {
-        const { textStyle } = styles;
-        return(
-            <View style={{ flex:1, backgroundColor: '#F04E45' }}>
-                <Text style={textStyle}> Section under development </Text>
+        return (
+            <View style={{ backgroundColor: '#F04E45', flex: 1 }}>
+                <LibraryList />
             </View>
         );
     }
 }
 
-const styles = {
-    textStyle: {
-        color: '#FFFFFF',
-        fontSize: 20,
-        textAlign: 'center',
-        fontFamily: 'Helvetica-Light'
-    }
-};
+// const styles = {
+//     textStyle: {
+//         color: '#FFFFFF',
+//         fontSize: 20,
+//         textAlign: 'center',
+//         fontFamily: 'Helvetica-Light'
+//     }
+// };
 
 export default Home;

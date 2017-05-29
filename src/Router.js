@@ -1,5 +1,6 @@
 import React from 'react';
 import { Text } from 'react-native';
+import firebase from 'firebase';
 import { Scene, Router, Actions } from 'react-native-router-flux';
 import InitialScreen from './components/InitialScreen';
 import LoginForm from './components/LoginForm';
@@ -49,6 +50,21 @@ const RouterComponent = () => {
                         sceneStyle={{ paddingTop: 65 }}
                         initial
                         renderBackButton={()=>(null)}
+                        rightTitle='Logout'
+                        onRight={() => {
+                            firebase.auth().signOut();
+                            Actions.initializeApp({ type: 'reset' });
+                        }}
+                        rightButtonTextStyle={{ color: '#FFFFFF' }}
+                        />
+                </Scene>
+                <Scene key='tab4' title='Attendance' icon={TabIcon}>
+                        <Scene
+                        key='attendance'
+                        component={Home}
+                        title='Attendance'
+                        sceneStyle={{ paddingTop: 65 }}
+                        renderBackButton={()=>(null)}
                         />
                 </Scene>
                 <Scene key='tab2' title='Gate Pass' icon={TabIcon}>
@@ -70,19 +86,11 @@ const RouterComponent = () => {
                         renderBackButton={()=>(null)}
                         />
                 </Scene>
-                <Scene key='tab4' title='Attendance' icon={TabIcon}>
-                        <Scene
-                        key='attendance'
-                        component={Home}
-                        title='Attendance'
-                        sceneStyle={{ paddingTop: 65 }}
-                        renderBackButton={()=>(null)}
-                        />
-                </Scene>
+
                 <Scene key='tab5' title='Developer' icon={TabIcon}>
                         <Scene
                         key='initial7'
-                        component={Home}
+                        component={InitialScreen}
                         title='About Developer'
                         sceneStyle={{ paddingTop: 65 }}
                         renderBackButton={()=>(null)}
