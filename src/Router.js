@@ -5,6 +5,8 @@ import { Scene, Router, Actions } from 'react-native-router-flux';
 import InitialScreen from './components/InitialScreen';
 import LoginForm from './components/LoginForm';
 import Home from './components/Home';
+import ExampleList from './ExampleList';
+import GatePass from './components/GatePass';
 
 const TabIcon = ({ selected, title }) => {
     return(
@@ -49,7 +51,7 @@ const RouterComponent = () => {
                         hideNavBar={false}
                         sceneStyle={{ paddingTop: 65 }}
                         initial
-                        renderBackButton={()=>(null)}
+                        renderBackButton={() => (null)}
                         rightTitle='Logout'
                         onRight={() => {
                             firebase.auth().signOut();
@@ -64,17 +66,17 @@ const RouterComponent = () => {
                         component={Home}
                         title='Attendance'
                         sceneStyle={{ paddingTop: 65 }}
-                        renderBackButton={()=>(null)}
+                        renderBackButton={() => (null)}
                         />
                 </Scene>
                 <Scene key='tab2' title='Gate Pass' icon={TabIcon}>
                         <Scene
                         key='gatepass'
-                        component={Home}
+                        component={GatePass}
                         title='Gate Pass'
                         hideNavBar={false}
                         sceneStyle={{ paddingTop: 65 }}
-                        renderBackButton={()=>(null)}
+                        renderBackButton={() => (null)}
                         />
                 </Scene>
                 <Scene key='tab3' title='Marks' icon={TabIcon}>
@@ -83,17 +85,17 @@ const RouterComponent = () => {
                         component={Home}
                         title='Marks'
                         sceneStyle={{ paddingTop: 65 }}
-                        renderBackButton={()=>(null)}
+                        renderBackButton={() =>( null)}
                         />
                 </Scene>
 
                 <Scene key='tab5' title='Developer' icon={TabIcon}>
                         <Scene
                         key='initial7'
-                        component={InitialScreen}
+                        component={ExampleList}
                         title='About Developer'
                         sceneStyle={{ paddingTop: 65 }}
-                        renderBackButton={()=>(null)}
+                        renderBackButton={() => (null)}
                         />
                 </Scene>
             </Scene>

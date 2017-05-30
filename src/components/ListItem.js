@@ -25,7 +25,7 @@ class ListItem extends Component {
             return (
                 <CardSection>
                     <Text style={styles.textStyle}>
-                        ► {library.description}
+                        ►  {library.description}
                     </Text>
                 </CardSection>
             );
@@ -43,7 +43,7 @@ class ListItem extends Component {
             onPress={() => this.props.selectLibrary(id)}
             >
                 <View>
-                    <CardSection style={{ backgroundColor: '#F04E45' }}>
+                    <CardSection>
                         <Text style={titleStyle}>
                             • {title}
                         </Text>
@@ -59,17 +59,17 @@ const styles = {
     titleStyle: {
         fontSize: 16,
         paddingLeft: 18,
-        paddingBottom: 10,
-        paddingTop: 10,
-        fontFamily: 'Helvetica-Light',
-        color: '#FFFFFF'
+        paddingRight: 18,
+        paddingBottom: 15,
+        paddingTop: 15,
+        fontFamily: 'Helvetica-Light'
     },
     textStyle: {
         paddingLeft: 18,
         paddingBottom: 10,
         paddingRight: 18,
         paddingTop: 10,
-        fontSize: 14,
+        fontSize: 13,
         fontFamily: 'Helvetica-Light',
     }
 };
